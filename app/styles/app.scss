@@ -1,0 +1,131 @@
+@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+*, *:before, *:after { box-sizing: border-box }
+
+html { font-size: 1.2em }
+
+html, body { width: 100% }
+
+body {
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #333;
+  background-color: #dbdbdb;
+}
+
+textarea {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  margin: none;
+  border: none;
+  resize: none;
+  font-size: .8em;
+  background-color: #34495E;
+  background-color: rgba(black, 0.10);
+  color: white;
+}
+//
+textarea:focus {
+  border: none;
+  outline: 0;
+}
+
+::-webkit-input-placeholder {
+  // color: #04724D;
+}
+
+h3 { margin: 0 }
+
+.ember-view { height: 80% }
+
+.input {
+  position: relative;
+  height: 100%;
+}
+
+.title-input { height: 40px }
+
+.body-input { height: 100% }
+
+.type-area, .live-text {
+  width: 48%;
+  height: 250px;
+  padding: 10px 10px 15px 10px;
+  margin: 10px;
+  float: left;
+  color: white;
+  border-left: solid rgba(black, 0.25) 20px;
+  background-color: #34495E;
+}
+
+.type-boxes { margin-bottom: 20px; }
+
+.note {
+  position: relative;
+  display: table;
+  overflow: hidden;
+  float: left;
+  height: 100%;
+  width: 48%;
+  margin: 10px;
+  color: white;
+  background-color: #9b59b6;
+}
+
+.flag-image {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 1.7em;
+  padding: 6px;
+  background-color: rgba(black, 0.25);
+  width: 10%;
+}
+
+.note-text { padding: 12px; }
+
+.note-close {
+  @extend .big-on-hover;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 29px;
+  line-height: 30px;
+  font-size: 24px;
+  border-radius: 25%;
+  text-align: center;
+  color: white;
+  background-color: rgba(black, 0.25);
+  opacity: 0.1;
+  transition: all 0.75s;
+  &:hover { background-color: rgba(black, 0.15); }
+  .note:hover & { opacity: 1; }
+}
+
+.save-button {
+  @extend .big-on-hover;
+  position: absolute;
+  bottom: 54px;
+  right: 10px;
+
+  width: 52px;
+  padding: 6px;
+  line-height: 30px;
+  font-size: 40px;
+  border-radius: 25%;
+  text-align: center;
+  color: white;
+  background-color: rgba(black, 0.25);
+  opacity: 0.1;
+  transition: all 0.75s;
+  &:hover { background-color: rgba(black, 0.15); }
+  .input:hover & { opacity: 1; }
+}
+
+.big-on-hover {
+  transform: scale(1, 1);
+  &:hover {
+    transform: scale(1.2, 1.2);
+  }
+}

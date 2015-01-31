@@ -1,25 +1,28 @@
 <div class="container">
-  <div class="top">
+  <section class="type-boxes">
     <div class="type-area">
-      {{textarea placeholder="Add a note!" value=noteCopy}}
-      <button class="save-button"{{action 'newNote'}}>Save Note</button>
+      {{textarea placeholder="Title" class="title-input" value=noteTitle}}
+      <div class="input">
+        {{textarea placeholder="Add a note!" value=noteCopy}}
+        <a href="#" {{action 'newNote' note}} class="save-button">
+          <i class="fa fa-arrow-circle-o-right"></i>
+        </a>
+        <!-- <button class="save-button"{{action 'newNote'}}>Save Note</button> -->
+      </div>
     </div>
 
     <div class="live-text">
+      <h3>{{noteTitle}}</h3>
       {{noteCopy}}
     </div>
-  </div>
+  </section>
 
-  <div class="saved-notes">
+  <section class="saved-notes">
     {{#each note in model}}
-      <div class="saved-note">
-        {{note.body}}
-        <div class="foot-note">
-          <button class="delete-button"{{action 'deleteNote' note.id}}>Delete</button>
-        </div>
-      </div>
+      {{local-note note=note deleteNote="deleteNote"}}
     {{/each}}
-  <div>
+  </section>
 
   {{outlet}}
+
 </div>

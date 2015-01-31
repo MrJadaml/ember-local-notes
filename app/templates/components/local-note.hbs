@@ -1,1 +1,12 @@
-{{yield}}
+<div class="flag-image">
+  <i class="fa fa-comment"></i>
+</div>
+
+<div class="note-text">
+  <h3>{{note.title}}</h3>
+  {{note.body}}
+</div>
+
+<a href="#" {{action 'deleteNote' note}} class="note-close">
+  <i class="fa fa-times"></i>
+</a>

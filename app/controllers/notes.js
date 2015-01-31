@@ -3,21 +3,22 @@ import Ember from "ember";
 export default Ember.ArrayController.extend({
   actions: {
     newNote: function() {
+      var title = this.get('noteTitle');
       var body = this.get('noteCopy');
       if (body) {
         var note = this.store.createRecord('note', {
+          title: title,
           body: body
         });
-
-        this.set('noteCopy', '');
         note.save();
       }
+        this.set('noteTitle', '');
+        this.set('noteCopy', '');
     },
 
-    deleteNote: function(note_id) {
-      this.store.find('note', note_id).then(function(note) {
-        note.deleteRecord();
-        note.save();
+    deleteNote: function(note) {
+      note.destroyRecord().then(function() {
+        this.flashMessage('success', 'Woot! That note is gone forever.');
       });
     }
   }
