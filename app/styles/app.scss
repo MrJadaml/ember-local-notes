@@ -44,6 +44,17 @@ h3 { margin: 0 }
   height: 100%;
 }
 
+.search-bar {
+  width: 97.3%;
+  margin: 0 10px;
+  padding: 10px 10px 0 10px;
+  float: left;
+  color: white;
+  border-left: solid rgba(black, 0.25) 20px;
+  background-color: rgba(243, 156, 18, 1);
+  position: relative;
+}
+
 .title-input { height: 40px }
 
 .body-input { height: 100% }
@@ -103,12 +114,16 @@ h3 { margin: 0 }
   .note:hover & { opacity: 1; }
 }
 
+/* why wont this work? */
+// i.fa {
+//   line-height: none;
+// }
+
 .save-button {
   @extend .big-on-hover;
   position: absolute;
   bottom: 54px;
   right: 10px;
-
   width: 52px;
   padding: 6px;
   line-height: 30px;
@@ -118,6 +133,18 @@ h3 { margin: 0 }
   color: white;
   background-color: rgba(black, 0.25);
   opacity: 0.1;
+  transition: all 0.75s;
+  &:hover { background-color: rgba(black, 0.15); }
+  .input:hover & { opacity: 1; }
+}
+
+.search-button {
+  @extend .big-on-hover;
+  padding: 6px 10px;
+  border-radius: 25%;
+  color: white;
+  background-color: rgba(black, 0.25);
+  opacity: 0.3;
   transition: all 0.75s;
   &:hover { background-color: rgba(black, 0.15); }
   .input:hover & { opacity: 1; }
