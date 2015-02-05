@@ -2,14 +2,12 @@
 
   <section class='search'>
     <div class='search-bar'>
-      {{textarea placeholder="Search..." class="search-input" value=searchText}}
+      {{input placeholder="Search..." class="search-input" value=q}}
       <a href="#" {{action 'noteSearch' }} class='search-button'>
         <i class='fa fa-angle-double-right'></i>
       </a>
     </div>
   </section>
-
-  {{outlet searchResults}}
 
   <section class="type-boxes">
     <div class="type-area">
@@ -29,7 +27,7 @@
   </section>
 
   <section class="saved-notes">
-    {{#each note in filteredNotes}}
+    {{#each note in model}}
       {{local-note note=note deleteNote="deleteNote"}}
     {{/each}}
   </section>
