@@ -3,13 +3,13 @@
   <section class='search'>
     <div class='search-bar'>
       {{input placeholder="Search..." class="search-input" value=query}}
-      <button {{action 'filteredNotes'}} class='search-button'>
+      <button {{action 'noteSearch'}} class='search-button'>
         <i class='fa fa-angle-double-right'></i>
       </button>
     </div>
   </section>
 
-  {{outlet searchResults}}
+  <!-- {{outlet searchResults}} -->
 
   <section class="type-boxes">
     <div class="type-area">
@@ -31,12 +31,12 @@
   <section class="saved-notes">
     <section class="left-notes">
       {{#each note in leftCol}}
-          {{local-note note=note deleteNote="deleteNote"}}
+        {{local-note note=note deleteNote="deleteNote"}}
       {{/each}}
     </section>
     <section class="right-notes">
       {{#each note in rightCol}}
-          {{local-note note=note deleteNote="deleteNote"}}
+        {{local-note note=note deleteNote="deleteNote"}}
       {{/each}}
     </section>
 

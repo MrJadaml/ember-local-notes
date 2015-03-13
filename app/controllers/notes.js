@@ -5,15 +5,16 @@ export default Ember.ArrayController.extend({
   query: null,
 
   rightCol: function() {
-    return this.store.filter('note', function(note){
+    return this.model.filter(function(note){
       return (note.id % 2 === 0);
     });
-  }.property(),
-  leftCol: function () {
-    return this.store.filter('note', function(note){
+  }.property('model'),
+
+  leftCol: function() {
+    return this.model.filter(function(note){
       return (note.id % 2 !== 0);
     });
-  }.property(),
+  }.property('model'),
 
   // //Nothing iterating over this computed property
   // filteredNotes: function () {
@@ -25,7 +26,6 @@ export default Ember.ArrayController.extend({
   //     return this.get('model');
   //   }
   // }.property('model.@each', 'query'),
-
 
   actions: {
 
@@ -50,13 +50,9 @@ export default Ember.ArrayController.extend({
 
     noteSearch: function() {
       var input = this.get('query');
-      return this.store.filter('note', function (input) {
-        return (note );
-      });
-      // this.store.find('note', {query: input}).then(function(notes) {
-      //   this.set('model', notes);
-      // }.bind(this));
-      // this.set('searchResults', '');
+      this.store.find('note', {query: input}).then(function(notes) {
+        this.set('model', notes);
+      }.bind(this));
     },
   }
 });
