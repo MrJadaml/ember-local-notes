@@ -2,7 +2,7 @@
 
   <section class='search'>
     <div class='search-bar'>
-      {{input placeholder="Search..." class="search-input" value=q}}
+      {{input placeholder="Search..." class="search-input" value=query}}
       <a href="#" {{action 'noteSearch' }} class='search-button'>
         <i class='fa fa-angle-double-right'></i>
       </a>
@@ -27,9 +27,17 @@
   </section>
 
   <section class="saved-notes">
-    {{#each note in model}}
-      {{local-note note=note deleteNote="deleteNote"}}
-    {{/each}}
+    <section class="left-notes">
+      {{#each note in left}}
+          {{local-note note=note deleteNote="deleteNote"}}
+      {{/each}}
+    </section>
+    <section class="right-notes">
+      {{#each note in right}}
+          {{local-note note=note deleteNote="deleteNote"}}
+      {{/each}}
+    </section>
+
   </section>
 
   {{outlet}}

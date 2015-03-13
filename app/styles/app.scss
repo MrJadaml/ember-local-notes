@@ -39,13 +39,13 @@ textarea {
   color: white;
 }
 //
-textarea:focus {
+textarea:focus, input:focus {
   border: none;
   outline: 0;
 }
 
 ::-webkit-input-placeholder {
-  // color: #04724D;
+  color: rgba(white, 0.40);
 }
 
 h3 { margin: 0 }
@@ -91,8 +91,8 @@ h3 { margin: 0 }
   overflow: hidden;
   float: left;
   height: 100%;
-  width: 48%;
-  margin: 10px;
+  width: 96%;
+  margin: 10px 0 10px 10px;
   color: white;
   background-color: #9b59b6;
 }
@@ -126,11 +126,6 @@ h3 { margin: 0 }
   &:hover { background-color: rgba(black, 0.15); }
   .note:hover & { opacity: 1; }
 }
-
-/* why wont this work? */
-// i.fa {
-//   line-height: none;
-// }
 
 .save-button {
   @extend .big-on-hover;
@@ -174,5 +169,18 @@ h3 { margin: 0 }
   transform: scale(1, 1);
   &:hover {
     transform: scale(1.2, 1.2);
+  }
+}
+
+.left-notes {
+  float: left;
+  width: 50%;
+}
+
+.right-notes {
+  float: right;
+  width: 50%;
+  .note {
+    margin: 10px 0;
   }
 }

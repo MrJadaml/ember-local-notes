@@ -1,8 +1,8 @@
 import Ember from "ember";
 
 export default Ember.ArrayController.extend({
-  queryParams: ['q'],
-  q: null,
+  queryParams: ['query'],
+  query: null,
 
   actions: {
     newNote: function() {
@@ -18,8 +18,8 @@ export default Ember.ArrayController.extend({
       this.set('noteCopy', '');
     },
     noteSearch: function() {
-      var input = this.get('q');
-      this.store.find('note', {q: input}).then(function(notes) {
+      var input = this.get('query');
+      this.store.find('note', {query: input}).then(function(notes) {
         this.set('model', notes);
       }.bind(this));
       this.set('searchResults', '');

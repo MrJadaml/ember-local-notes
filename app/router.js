@@ -7,7 +7,7 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.resource('notes', {path: '/'}, function () {
-    this.route('search')
+    this.route('search');
   });
 });
 
