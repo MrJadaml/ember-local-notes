@@ -3,9 +3,9 @@
   <section class='search'>
     <div class='search-bar'>
       {{input placeholder="Search..." class="search-input" value=query}}
-      <a href="#" {{action 'noteSearch' }} class='search-button'>
+      <button {{action 'noteSearch'}} class='search-button'>
         <i class='fa fa-angle-double-right'></i>
-      </a>
+      </button>
     </div>
   </section>
 
@@ -28,12 +28,12 @@
 
   <section class="saved-notes">
     <section class="left-notes">
-      {{#each note in left}}
+      {{#each note in leftCol}}
           {{local-note note=note deleteNote="deleteNote"}}
       {{/each}}
     </section>
     <section class="right-notes">
-      {{#each note in right}}
+      {{#each note in rightCol}}
           {{local-note note=note deleteNote="deleteNote"}}
       {{/each}}
     </section>

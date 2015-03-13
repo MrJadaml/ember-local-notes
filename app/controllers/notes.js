@@ -4,6 +4,18 @@ export default Ember.ArrayController.extend({
   queryParams: ['query'],
   query: null,
 
+  rightCol: function() {
+    return this.store.filter('note', function(note){
+      return (note.id % 2 == 0);
+    });
+  }.property(),
+  leftCol: function () {
+    return this.store.filter('note', function(note){
+      return (note.id % 2 !== 0);
+    });
+  }.property(),
+
+
   actions: {
     newNote: function() {
       var body = this.get('noteCopy');
@@ -22,6 +34,7 @@ export default Ember.ArrayController.extend({
       this.store.find('note', {query: input}).then(function(notes) {
         this.set('model', notes);
       }.bind(this));
+      debugger;
       this.set('searchResults', '');
     },
     deleteNote: function(note) {
