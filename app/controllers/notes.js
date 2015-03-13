@@ -6,7 +6,7 @@ export default Ember.ArrayController.extend({
 
   rightCol: function() {
     return this.store.filter('note', function(note){
-      return (note.id % 2 == 0);
+      return (note.id % 2 === 0);
     });
   }.property(),
   leftCol: function () {
@@ -15,8 +15,20 @@ export default Ember.ArrayController.extend({
     });
   }.property(),
 
+  // //Nothing iterating over this computed property
+  // filteredNotes: function () {
+  //   if(this.get('query') && this.get('query').trim()){
+  //     return this.get('model').filter(function (record) {
+  //       return record.get('title').indexOf(this.get('query')) > -1;
+  //     }.bind(this));
+  //   } else {
+  //     return this.get('model');
+  //   }
+  // }.property('model.@each', 'query'),
+
 
   actions: {
+
     newNote: function() {
       var body = this.get('noteCopy');
       if (body) {
@@ -29,18 +41,22 @@ export default Ember.ArrayController.extend({
       this.set('noteTitle', '');
       this.set('noteCopy', '');
     },
-    noteSearch: function() {
-      var input = this.get('query');
-      this.store.find('note', {query: input}).then(function(notes) {
-        this.set('model', notes);
-      }.bind(this));
-      debugger;
-      this.set('searchResults', '');
-    },
+
     deleteNote: function(note) {
       note.destroyRecord().then(function() {
         this.flashMessage('success', 'Woot! That note is gone forever.');
       });
-    }
+    },
+
+    noteSearch: function() {
+      var input = this.get('query');
+      return this.store.filter('note', function (input) {
+        return (note );
+      });
+      // this.store.find('note', {query: input}).then(function(notes) {
+      //   this.set('model', notes);
+      // }.bind(this));
+      // this.set('searchResults', '');
+    },
   }
 });
