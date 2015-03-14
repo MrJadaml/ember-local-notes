@@ -13,7 +13,7 @@
   },
   "repository": "https://github.com/stefanpenner/ember-cli",
   "engines": {
-    "node": ">= 0.10.0"
+    "node": "0.10.x"
   },
   "author": "",
   "license": "MIT",
