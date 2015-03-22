@@ -3,9 +3,9 @@
   <section class='search'>
     <div class='search-bar'>
       {{input placeholder="Search..." class="search-input" value=query}}
-      <button {{action 'noteSearch'}} class='search-button'>
+      <a {{action 'noteSearch'}} class='search-button'>
         <i class='fa fa-angle-double-right'></i>
-      </button>
+      </a>
     </div>
   </section>
 
@@ -16,7 +16,7 @@
       {{textarea placeholder="Your name" class="title-input" value=noteTitle}}
       <div class="input">
         {{textarea placeholder="Leave me a note!" value=noteCopy}}
-        <a href="#" {{action 'newNote' note}} class="save-button">
+        <a {{action 'newNote' note}} class="save-button">
           <i class="fa fa-arrow-circle-o-right"></i>
         </a>
       </div>

@@ -147,10 +147,11 @@ h3 { margin: 0 }
 
 .search-button {
   @extend .big-on-hover;
-  padding: 0px 8px;
   position: absolute;
   top: 15px;
   left: 1338px;
+  padding: 0px 6px;
+  font-size: 22px;
   border-radius: 25%;
   color: white;
   background-color: rgba(243, 156, 18, 1);
