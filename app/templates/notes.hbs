@@ -2,8 +2,8 @@
 
   <section class='search'>
     <div class='search-bar'>
-      {{input placeholder="Search..." class="search-input" value=query}}
-      <a {{action 'noteSearch'}} class='search-button'>
+      {{input action='noteSearch' placeholder="Search..." class="search-input" value=query}}
+      <a class='search-button'>
         <i class='fa fa-angle-double-right'></i>
       </a>
     </div>
