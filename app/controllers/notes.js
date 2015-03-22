@@ -7,14 +7,14 @@ export default Ember.ArrayController.extend({
   rightCol: function() {
     return this.model.filter(function(note){
       return (note.id % 2 === 0);
-    });
-  }.property('model'),
+    }).reverse();
+  }.property('model.@each'),
 
   leftCol: function() {
     return this.model.filter(function(note){
       return (note.id % 2 !== 0);
-    });
-  }.property('model'),
+    }).reverse();
+  }.property('model.@each'),
 
   // //Nothing iterating over this computed property
   // filteredNotes: function () {

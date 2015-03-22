@@ -18,7 +18,7 @@ module.exports = function(environment) {
       'default-src': "'none'",
       'script-src': "'self' localhost:35729 0.0.0.0:35729 'unsafe-eval'",
       'font-src': "'self' http://netdna.bootstrapcdn.com/font-awesome/4.0.3/fonts/fontawesome-webfont.woff?v=4.0.3 http://netdna.bootstrapcdn.com/font-awesome/4.0.3/fonts/fontawesome-webfont.ttf?v=4.0.3",
-      'connect-src': "'self' localhost:3000 https://rails-notes-api.herokuapp.com/",
+      'connect-src': "'self' localhost:3000 https://rails-notes-api.herokuapp.com",
       'img-src': "'self'",
       'style-src': "'self' https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css",
       'media-src': "'self'"
