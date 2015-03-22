@@ -6,6 +6,7 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     adapterURL: process.env.ADAPTER_URL,
+    exportApplicationGlobal: true,
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
